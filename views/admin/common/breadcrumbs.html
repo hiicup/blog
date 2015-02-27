@@ -1,0 +1,25 @@
+<ol class="breadcrumb">
+  {{range $k,$v:=.breadcrumbs}}
+		<li>
+			{{if eq "nil" $k}}
+				{{$v}}
+			{{else}}
+				<a href="{{$k}}">{{$v}}</a>
+			{{end}}
+		</li>
+  {{end}}
+</ol>
+
+{{if .flash.error}}
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>{{.flash.error}}</strong>
+</div>
+{{end}}
+
+{{if .flash.success}}
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>{{.flash.success}}</strong>
+</div>
+{{end}}

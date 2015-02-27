@@ -24,9 +24,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">
-      	<img src="static/logo.png">
-      </a>
+      <a class="navbar-brand" href="/"><img src="static/logo.png"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,25 +47,35 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-8">
-				{{range $k,$v:=.data}}
-				<article>
-					<div class="panel panel-default">
-					  <div class="panel-body">
-					    <h4><a href="/detail/{{$v.Id}}">{{$v.Title}}</a></h4>
-					    <div class="info">
-					    	分类：<a href="#">前端</a> &nbsp;&nbsp;
-					    	标签：{{$v.Tags}}&nbsp;&nbsp;
-					    	时间：{{$v.Ctime}}&nbsp;&nbsp;
-					    </div>
-					    <div class="con text-muted">
-					    	{{$v.Info}}
-					    </div>
-					  </div>
+				<div class="row">
+					<div class="col-md-4">&nbsp;</div>
+					<div class="col-md-4">
+					{{if .hasError}}
+					<div class="alert alert-danger alert-dismissible" role="alert">
+					  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					  <strong>Error!</strong> {{.flash.error}}
 					</div>
-				</article>
-
-				{{end}}
-
+					{{end}}
+<form method="post">
+{{._hash_}}
+  <div class="form-group">
+    <label for="exampleInputEmail1">用户名</label>
+    <input type="text" name="username" class="form-control" required id="username" placeholder="用户名">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">密码</label>
+    <input type="password" name="password" class="form-control" required id="password" placeholder="密码">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input name="remember" type="checkbox"> 记住我
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">登录</button>
+</form>
+					</div>
+					<div class="col-md-4">&nbsp;</div>
+				</div>
 			</div>
 			<div class="col-md-2">
 
@@ -76,9 +84,11 @@
 						所有分类
 					</div>
 					<ul class="list-group">
-					  {{range $k,$v:=.cates}}
-							<li class="list-group-item"><a href="#">{{$v.Name}}</a> <span class="badge">10</span></li>
-					  {{end}}
+					  <li class="list-group-item"><a href="#">数据库</a> <span class="badge">4</span></li>
+					  <li class="list-group-item"><a href="#">前端</a> <span class="badge">42</span></li>
+					  <li class="list-group-item"><a href="#">Go</a> <span class="badge">55</span></li>
+					  <li class="list-group-item"><a href="#">php</a> <span class="badge">47</span></li>
+					  <li class="list-group-item"><a href="#">服务器</a> <span class="badge">87</span></li>
 					</ul>
 				</div>
 
@@ -97,7 +107,7 @@
 
 				<div class="panel panel-default">
 					<ul class="list-group">
-					  <li class="list-group-item"><a href="/login" class="text-muted">登录</a></li>
+					  <li class="list-group-item"><a href="#" class="text-muted">登录</a></li>
 					</ul>
 				</div>
 

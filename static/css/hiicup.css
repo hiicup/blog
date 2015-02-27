@@ -11,7 +11,7 @@ body{
 	margin-bottom: 10px;
 }
 
-article .info{
+.info{
 	font-size: 12px;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
@@ -21,4 +21,18 @@ article .info{
 article .label{
 	font-weight: normal;
 	font-size: 12px;
+}
+
+.navbar-brand{
+	padding: 0;
+}
+
+article.detail{
+	padding-right: 20px;
+	padding-left: 10px;
+}
+
+.content img{
+	max-width: 100%;
+	height: auto;
 }
