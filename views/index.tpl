@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>{{.appName}}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
   <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="/static/bt/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/static/css/hiicup.css">
