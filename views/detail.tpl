@@ -61,9 +61,8 @@
 		    	标签：{{.data.Tags}}&nbsp;&nbsp;
 		    	时间：{{.data.Ctime}}&nbsp;&nbsp;
 		    </div>
-			<div class="content">{{.data.Content}}</div>
+			<div class="content">{{str2html .data.Content}}</div>
 			</article>
-
 				
 			</div>
 			<div class="col-md-2">
