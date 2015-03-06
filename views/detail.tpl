@@ -36,5 +36,4 @@
 		</div>
 	</div>
 </section>
-
 {{template "footer.html"}}

@@ -4,7 +4,7 @@
 {{template "head.html" .}}
 </head>
 <body>
-
+ 
 {{template "nav.html" .}}
 
 <section>
