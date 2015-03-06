@@ -14,20 +14,13 @@
 
 			<ol class="breadcrumb">
 			  <li><a href="/">首页</a></li>
-			  <li><a href="/category">服务器</a></li>
-			  <li class="active">详情</li>
+			  <li class="active">关于博主</li>
 			</ol>
-			<article class="detail">
-			<h3>{{.data.Title}}</h3>
 
-			<div class="info">
-		    	分类：<a href="#">前端</a> &nbsp;&nbsp;
-		    	标签：{{.data.Tags}}&nbsp;&nbsp;
-		    	时间：{{.data.Ctime}}&nbsp;&nbsp;
-		    </div>
-			<div class="content">{{str2html .data.Content}}</div>
-			</article>
-				
+			<blockquote class="text-muted">
+				占位！(...此处省略若干个字！)
+			</blockquote>
+
 			</div>
 			<div class="col-md-2">
 				{{template "rightside.html" .}}

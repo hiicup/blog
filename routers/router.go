@@ -8,9 +8,12 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.MainController{})
-	beego.Router("/detail/:id([0-9])", &controllers.DetailController{})
+	beego.Router("/index.html", &controllers.MainController{})
+	beego.Router("/index.php", &controllers.MainController{})
+	beego.Router("/detail/:id([0-9]+)", &controllers.DetailController{})
 	beego.Router("/login", &controllers.LoginController{})
 	beego.Router("/logout", &controllers.LoginController{}, "*:Logout")
+	beego.Router("/about", &controllers.AboutController{})
 
 	//后台
 	beego.Router("/admin", &admin.IndexController{})

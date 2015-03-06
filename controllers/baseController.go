@@ -4,17 +4,41 @@ import (
 	"errors"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/session"
+	"github.com/hiicup/blog/models"
 )
 
 var gs *session.Manager
 
+type seo struct {
+	Title       string
+	Keywords    string
+	Description string
+}
+
 type baseController struct {
+	seo
 	beego.Controller
 }
 
 func init() {
-	gs, _ = session.NewManager("file", `{"cookieName":"gosessionid", "enableSetCookie,omitempty": true, "gclifetime":3600, "maxLifetime": 3600, "secure": false, "sessionIDHashFunc": "sha1", "sessionIDHashKey": "", "cookieLifeTime": 3600, "providerConfig": ""}`)
-	go gs.GC()
+	initSession()
+}
+
+func (this *baseController) Prepare() {
+	this.initSeo()
+	this.getCategorys()
+}
+
+func (this *baseController) initSeo() {
+	this.seo.Title = beego.AppName
+	this.seo.Keywords = beego.AppName
+	this.seo.Description = beego.AppName
+	this.Data["seo"] = &this.seo
+}
+
+func (this *baseController) getCategorys() {
+	cates := new(models.Category).All()
+	this.Data["cates"] = cates
 }
 
 func (this *baseController) session(args ...string) interface{} {
@@ -48,4 +72,9 @@ func (this *baseController) sessionDelete(key interface{}) interface{} {
 		return err
 	}
 	return sess.Delete(key)
+}
+
+func initSession() {
+	gs, _ = session.NewManager("file", `{"cookieName":"gosessionid", "enableSetCookie,omitempty": true, "gclifetime":3600, "maxLifetime": 3600, "secure": false, "sessionIDHashFunc": "sha1", "sessionIDHashKey": "", "cookieLifeTime": 3600, "providerConfig": ""}`)
+	go gs.GC()
 }
