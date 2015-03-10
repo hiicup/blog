@@ -1,24 +1,11 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		所有分类
+		分类
 	</div>
 	<ul class="list-group">
 	  {{range $k,$v:=.cates}}
-			<li class="list-group-item"><a href="#">{{$v.Name}}</a> <span class="badge">10</span></li>
+			<li class="list-group-item"><a href="/category/{{$v.Id}}">{{$v.Name}}</a></li>
 	  {{end}}
-	</ul>
-</div>
-
-<div class="panel panel-default">
-	<div class="panel-heading">
-		文章归档
-	</div>
-	<ul class="list-group">
-	  <li class="list-group-item"><a href="#">数据库</a> <span class="badge">4</span></li>
-	  <li class="list-group-item"><a href="#">前端</a> <span class="badge">42</span></li>
-	  <li class="list-group-item"><a href="#">Go</a> <span class="badge">55</span></li>
-	  <li class="list-group-item"><a href="#">php</a> <span class="badge">47</span></li>
-	  <li class="list-group-item"><a href="#">服务器</a> <span class="badge">87</span></li>
 	</ul>
 </div>
 

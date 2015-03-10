@@ -10,6 +10,10 @@ type Category struct {
 	Info string
 }
 
+func NewCategory() *Category {
+	return new(Category)
+}
+
 func (this *Category) Gets() []Category {
 
 	o := orm.NewOrm()

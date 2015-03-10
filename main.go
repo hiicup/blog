@@ -28,7 +28,7 @@ func init() {
 		db_user, db_pass, db_host, db_port, db_name, db_charset)
 	orm.RegisterDataBase("default", "mysql", dsn)
 	// orm.RunSyncdb("default", true, true)
-	orm.Debug = true
+	orm.Debug = false
 
 }
 

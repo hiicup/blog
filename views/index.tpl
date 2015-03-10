@@ -11,18 +11,18 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-8">
-				{{range $k,$v:=.data}}
+				{{range $k,$v:=.sdata}}
 				<article>
 					<div class="panel panel-default">
 					  <div class="panel-body">
-					    <h4><a href="/detail/{{$v.Id}}">{{$v.Title}}</a></h4>
+					    <h4><a href="/detail/{{$v.id}}">{{$v.title}}</a></h4>
 					    <div class="info">
-					    	分类：<a href="#">前端</a> &nbsp;&nbsp;
-					    	标签：{{$v.Tags}}&nbsp;&nbsp;
-					    	时间：{{$v.Ctime}}&nbsp;&nbsp;
+					    	分类：<a href="/category/{{$v.cid}}">{{$v.cname}}</a> &nbsp;&nbsp;
+					    	标签：{{$v.tags}}&nbsp;&nbsp;
+					    	时间：{{$v.ctime}}&nbsp;&nbsp;
 					    </div>
 					    <div class="con text-muted">
-					    	{{$v.Info}}
+					    	{{$v.info}}
 					    </div>
 					  </div>
 					</div>

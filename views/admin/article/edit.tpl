@@ -58,6 +58,14 @@
                 </div>
               </div>
               <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <label for="lang">语言高亮 <span class="text-muted f12">空格隔开</span></label>
+                    <input type="text" class="form-control" id="lang" name="lang" placeholder="语言高亮" value="{{.data.Lang}}">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
                 <label for="info">内容概要 <span class="text-muted f12">200字以内</span></label>
                 <textarea class="form-control" id="info" name="info" placeholder="内容概要200字以内" style="height: 80px">{{.data.Info}}</textarea>
               </div>

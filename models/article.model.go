@@ -15,6 +15,11 @@ type Article struct {
 	Author  string
 	Views   int
 	Tags    string `orm:size(1000)`
+	Lang    string `orm:"size(100)"`
+}
+
+func NewArticle() *Article {
+	return new(Article)
 }
 
 func (this *Article) One() error {
@@ -45,6 +50,6 @@ func (this *Article) Query() orm.QuerySeter {
 
 func (m *Article) All() []Article {
 	_data := []Article{}
-	m.Query().All(&_data)
+	m.Query().OrderBy("id").All(&_data)
 	return _data
 }

@@ -31,7 +31,7 @@ func (this *ArticleController) Index() {
 
 	art := new(models.Article)
 	data := []models.Article{}
-	art.Query().All(&data)
+	art.Query().OrderBy("-id").All(&data)
 
 	this.Data["data"] = data
 
@@ -41,6 +41,7 @@ func (this *ArticleController) Index() {
 func (this *ArticleController) Create() {
 	f := beego.NewFlash()
 	if this.isPost {
+
 		art := new(models.Article)
 		art.Cid, _ = this.GetInt("cid")
 		art.Title = this.GetString("title")
@@ -50,6 +51,7 @@ func (this *ArticleController) Create() {
 		art.Ctime = time.Now()
 		art.Info = this.GetString("info")
 		art.Views, _ = this.GetInt("views")
+		art.Lang = this.GetString("lang")
 
 		rUrl := URL_ARTICLE_HOME
 		if err := art.Insert(); err != nil {
@@ -96,6 +98,7 @@ func (this *ArticleController) Edit() {
 		art.Content = html.EscapeString(this.GetString("content"))
 		art.Info = this.GetString("info")
 		art.Views, _ = this.GetInt("views")
+		art.Lang = this.GetString("lang")
 
 		if art.Update() != nil {
 			this.Error(lang.MSG_EDIT_ERROR, URL_ARTICLE_HOME)

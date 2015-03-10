@@ -27,7 +27,7 @@
                 <th>编号</th>
                 <th>标题</th>
                 <th>分类</th>
-                <th>概要</th>
+                <th>语言</th>
                 <th>浏览</th>
                 <th width="200">操作</th>
               </tr>
@@ -37,7 +37,7 @@
                   <td>{{$val.Id}}</td>
                   <td>{{$val.Title}}</td>
                   <td>{{$val.Cid}}</td>
-                  <td>{{$val.Info}}</td>
+                  <td>{{$val.Lang}}</td>
                   <td>{{$val.Views}}</td>
                   <td>
                     <a class="btn btn-default btn-xs" href="/admin/article/edit/{{$val.Id}}">编辑</a>
