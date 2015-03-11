@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/hiicup/blog/models"
@@ -35,16 +36,19 @@ func (this *MainController) Get() {
 	qb.From("article as a")
 	qb.LeftJoin("category as c")
 	qb.On("a.cid = c.id")
-	qb.OrderBy("a.id").Desc()
-	qb.Limit(pageSize).Offset((p - 1) * pageSize)
 
 	if w != "" {
-		where := "title like %?% OR tags like %?%"
+		where := "title like ? OR tags like ?"
+		wStr := fmt.Sprintf("%%%s%%", w)
 		qb.Where(where)
+		qb.OrderBy("a.id").Desc()
+		qb.Limit(pageSize).Offset((p - 1) * pageSize)
 		countQb.Where(where)
-		r = o.Raw(qb.String(), w, w)
-		countR = o.Raw(countQb.String(), w, w)
+		r = o.Raw(qb.String(), wStr, wStr)
+		countR = o.Raw(countQb.String(), wStr, wStr)
 	} else {
+		qb.OrderBy("a.id").Desc()
+		qb.Limit(pageSize).Offset((p - 1) * pageSize)
 		r = o.Raw(qb.String())
 		countR = o.Raw(countQb.String())
 	}
