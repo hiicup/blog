@@ -49,10 +49,14 @@ func (this *MainController) Get() {
 		countR = o.Raw(countQb.String())
 	}
 
-	r.Values(&lists)         //获取数据
-	countR.Values(&countRes) //获取总数
-	//总数
-	dataCount, _ := strconv.Atoi(countRes[0]["count"].(string))
+	num, _ := r.Values(&lists) //获取数据
+	countR.Values(&countRes)   //获取总数
+
+	dataCount := 0
+	if num > 0 {
+		//总数
+		dataCount, _ = strconv.Atoi(countRes[0]["count"].(string))
+	}
 
 	page := tool.NewPager(p, dataCount, pageSize, this.Ctx.Request.RequestURI)
 
