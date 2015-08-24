@@ -1,8 +1,8 @@
 package admin
 
 import (
-	"github.com/astaxie/beego"
-	"reflect"
+// "github.com/astaxie/beego"
+// "reflect"
 )
 
 type IndexController struct {
