@@ -12,8 +12,8 @@ type IndexController struct {
 func (this *IndexController) Get() {
 	// flash := beego.ReadFromRequest(&this.Controller)
 
-	beego.Trace(this.uid)
-	beego.Trace(reflect.TypeOf(this.uid))
+	// beego.Trace(this.uid)
+	// beego.Trace(reflect.TypeOf(this.uid))
 
 	this.TplNames = "admin/index.tpl"
 }
