@@ -17,9 +17,9 @@
 			  <li class="active">关于博主</li>
 			</ol>
 
-			<blockquote class="text-muted">
-				占位！(...此处省略若干个字！)
-			</blockquote>
+		据说博主是个男性青年!<br/>
+        主要搞Web开发!    
+        以后有时间了在补充...
 
 			</div>
 			<div class="col-md-2">
