@@ -1,7 +1,7 @@
 
 body{
 	/*font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Arial, sans-serif,'Microsoft YaHei',Monaco,sans-serif;*/
-	font-family: Monaco,Arial, sans-serif,'Microsoft YaHei',sans-serif;
+	font-family: Monaco,'Microsoft YaHei',Arial, sans-serif,sans-serif;
 	/*normal 14px/1.6 */
 	padding:70px 0;
 }
