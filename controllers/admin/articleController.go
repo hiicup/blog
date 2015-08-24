@@ -25,7 +25,6 @@ func (this *ArticleController) Prepare() {
 }
 
 func (this *ArticleController) Index() {
-	beego.Trace(this.controller)
 
 	this.breadcrumbs["nil"] = lang.LIST
 
