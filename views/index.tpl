@@ -13,18 +13,19 @@
 			<div class="col-md-8">
 				{{range $k,$v:=.sdata}}
 				<article>
-					<div class="panel panel-default">
-					  <div class="panel-body">
-					    <h4><a href="/detail/{{$v.id}}">{{$v.title}}</a></h4>
-					    <div class="info">
-					    	分类：<a href="/category/{{$v.cid}}">{{$v.cname}}</a> &nbsp;&nbsp;
-					    	标签：{{$v.tags}}&nbsp;&nbsp;
-					    	时间：{{$v.ctime}}&nbsp;&nbsp;
+					<div class="panel">
+					    <h4>
+					    	<span class="label label-warning">{{$v.month}}/{{$v.day}}</span>
+					    	<a href="/detail/{{$v.id}}">{{$v.title}}</a>
+					    </h4>
+					    <div class="info text-muted">
+					    	time：{{$v.hour}}:{{$v.minute}}&nbsp;&nbsp;
+					    	category：<a href="/category/{{$v.cid}}">{{$v.cname}}</a> &nbsp;&nbsp;
+					    	tag：{{$v.tags}}&nbsp;&nbsp;
 					    </div>
-					    <div class="con text-muted">
+					    <div class="con text-muted hide">
 					    	{{$v.info}}
 					    </div>
-					  </div>
 					</div>
 				</article>
 				{{end}}

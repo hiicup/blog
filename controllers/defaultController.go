@@ -64,6 +64,16 @@ func (this *MainController) Get() {
 
 	page := tool.NewPager(p, dataCount, pageSize, this.Ctx.Request.RequestURI)
 
+	for _, v := range lists {
+		_t, _ := tool.StrToTime(v["ctime"].(string))
+		v["year"] = _t.Year()
+		v["day"] = _t.Day()
+		v["month"] = strconv.Itoa(int(_t.Month()))
+		v["hour"] = _t.Hour()
+		v["second"] = _t.Second()
+		v["minute"] = _t.Minute()
+	}
+
 	this.Data["w"] = w
 	this.Data["page"] = page.String()
 	this.Data["sdata"] = lists
