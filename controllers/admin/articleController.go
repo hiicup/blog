@@ -76,6 +76,37 @@ func (this *ArticleController) Create() {
 	this.TplNames = "admin/article/create.tpl"
 }
 
+func (this *ArticleController) Md() {
+	id, err := this.GetInt(":id")
+
+	if err != nil {
+		this.Error(lang.MSG_NOT_EXIST, URL_ARTICLE_HOME)
+	}
+
+	art := new(models.Article)
+	art.Id = id
+	if art.One() != nil {
+		this.Error(lang.MSG_NOT_EXIST, URL_ARTICLE_HOME)
+	}
+
+	if this.isPost {
+		art.Html = this.GetString("html")
+		art.Md = this.GetString("md")
+		if art.Update() != nil {
+			this.Error(lang.MSG_EDIT_ERROR, URL_ARTICLE_HOME)
+		}
+		this.Success(lang.MSG_EDIT_SUCCESS, URL_ARTICLE_HOME)
+
+	} else {
+		beego.Trace(html.UnescapeString(art.Content))
+		// art.Content = html.UnescapeString(art.Content)
+	}
+
+	this.breadcrumbs["nil"] = lang.EDIT
+	this.Data["data"] = art
+	this.TplNames = "admin/article/md.tpl"
+}
+
 func (this *ArticleController) Edit() {
 	id, err := this.GetInt(":id")
 

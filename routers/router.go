@@ -29,5 +29,6 @@ func init() {
 	beego.Router("/admin/article", &admin.ArticleController{}, "*:Index")
 	beego.Router("/admin/article/create", &admin.ArticleController{}, "*:Create")
 	beego.Router("/admin/article/edit/:id([0-9]+)", &admin.ArticleController{}, "get,post:Edit")
+	beego.Router("/admin/article/md/:id([0-9]+)", &admin.ArticleController{}, "get,post:Md")
 	beego.Router("/admin/article/delete/:id([0-9]+)", &admin.ArticleController{}, "get:Delete")
 }

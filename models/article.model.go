@@ -11,6 +11,8 @@ type Article struct {
 	Info    string    `orm:size(1024)`
 	Cid     int       `orm:index`
 	Content string    `orm:type(text)`
+	Md      string    `orm:type(text)`
+	Html    string    `orm:type(text)`
 	Ctime   time.Time `orm:type(datetime)`
 	Author  string
 	Views   int

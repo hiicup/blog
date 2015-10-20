@@ -14,7 +14,7 @@
 
 
       </div>
-      <div class="col-md-8">
+      <div class="col-md-10">
         <!-- breadcrumbs begin -->
         {{template "admin/common/breadcrumbs.html" .}}
         <!-- breadcrumbs end -->
@@ -41,6 +41,7 @@
                   <td>{{$val.Views}}</td>
                   <td>
                     <a class="btn btn-default btn-xs" href="/admin/article/edit/{{$val.Id}}">编辑</a>
+                    <a class="btn btn-default btn-xs" href="/admin/article/md/{{$val.Id}}">MD</a>
                     <a href="/admin/article/delete/{{$val.Id}}" class="btn btn-default btn-xs">删除</a>
                   </td>
                 </tr>
