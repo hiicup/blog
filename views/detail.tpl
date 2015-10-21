@@ -35,7 +35,16 @@
 		    	时间：{{.data.ctime}}&nbsp;&nbsp;
 		    	浏览：{{.data.views}}
 		    </div>
-			<div class="content" style="margin-bottom:50px;">{{str2html .data.content}}</div>
+
+{{if eq "yes" .isHtml}}
+<div class="content" style="margin-bottom:50px;">{{str2html .data.html}}</div>
+{{end}}
+
+{{if eq "no" .isHtml}}
+<div class="content" style="margin-bottom:50px;">{{str2html .data.content}}</div>
+{{end}}
+
+			
 
 			<div class="comments">
 				<!-- 多说最新评论 start -->
