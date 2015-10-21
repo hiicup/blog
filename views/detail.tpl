@@ -2,14 +2,11 @@
 <html>
 <head>
 {{template "head.html" .}}
-<script type="text/javascript" src="/static/plugins/syntaxhighlighter/scripts/shCore.js"></script>
-{{range $k,$v:=.lang}}
-<script type="text/javascript" src="/static/plugins/syntaxhighlighter/scripts/shBrush{{$v}}.js"></script>
-{{end}}
-<link rel="stylesheet" type="text/css" href="/static/plugins/syntaxhighlighter/styles/shCoreDefault.css">
+<script type="text/javascript" src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/node_modules/highlight.js/styles/xcode.css">
 
 <script type="text/javascript">
-	SyntaxHighlighter.all();
+	hljs.initHighlightingOnLoad();
 </script>
 
 </head>
