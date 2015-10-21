@@ -9,22 +9,38 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-      	<img src="/static/logo.png">
+      	
       </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="/about">About</a></li>
+        <li class=""><a href="/">Hiicup的笔记 <span class="sr-only">(current)</span></a></li>
+        <li><a href="/about">关于Hiicup</a></li>
+        <li>
+          
+        </li>
       </ul>
-      <form class="navbar-form navbar-right" role="search" method="get" action="/">
-        <div class="form-group">
-          <input type="text" class="form-control" name="w" placeholder="Keywords" value="{{.w}}">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
+      <div class="nav navbar-nav navbar-right">
+      <form class="navbar-form" role="search" method="get" action="/">
+            <div class="form-group">
+              <input type="text" class="form-control" name="w" placeholder="描述一下" value="{{.w}}">
+            </div>
+            <button type="submit" class="btn btn-default">猛击此处</button>
+          </form>
+        <!-- <img src="/static/shi.png" style="margin-top:15px;margin-right:50px;"> -->
+      </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<style type="text/css">
+  body{
+    /*background: #eee;*/
+  }
+  .navbar-brand img{
+      margin-top: 10px;
+      margin-right: 10px;
+      margin-left: 20px;
+  }
+</style>
