@@ -33,15 +33,7 @@
 		    	浏览：{{.data.views}}
 		    </div>
 
-{{if eq "yes" .isHtml}}
-<div class="content" style="margin-bottom:50px;">{{str2html .data.html}}</div>
-{{end}}
-
-{{if eq "no" .isHtml}}
-<div class="content" style="margin-bottom:50px;">{{str2html .data.content}}</div>
-{{end}}
-
-			
+			<div class="content" style="margin-bottom:50px;">{{str2html .data.content}}</div>
 
 			<div class="comments">
 				<!-- 多说最新评论 start -->

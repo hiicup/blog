@@ -20,7 +20,7 @@ func (this *DetailController) Get() {
 
 	//构造sql语句
 	qb, _ := models.NewQb() //query builder
-	qb.Select("a.id,a.views,a.ctime,a.lang,a.title,a.content,a.html,a.cid,a.tags,a.info,c.name as cname").From("article as a").InnerJoin("category as c").On("a.cid = c.id").Where("a.id = ?")
+	qb.Select("a.id,a.views,a.ctime,a.lang,a.title,a.content,a.html,a.md,a.cid,a.tags,a.info,c.name as cname").From("article as a").InnerJoin("category as c").On("a.cid = c.id").Where("a.id = ?")
 
 	//原生查询
 	o := models.NewOrm()
@@ -43,9 +43,8 @@ func (this *DetailController) Get() {
 	//浏览数自增
 	o.Raw("update article set views=(views+1) where id=?", id).Exec()
 
-	this.Data["isHtml"] = "yes"
-	if article["html"] == "" {
-		this.Data["isHtml"] = "no"
+	if article["md"] != nil {
+		article["content"] = article["html"]
 	}
 
 	this.Data["data"] = article
