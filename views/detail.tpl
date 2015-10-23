@@ -24,7 +24,8 @@
 			  <li class="active">详情</li>
 			</ol>
 			<article class="detail">
-			<h3>{{.data.title}}</h3>
+			<div class="detail-head">
+				<h3>{{.data.title}}</h3>
 
 			<div class="info">
 		    	分类：<a href="/category/{{.data.cid}}">{{.data.cname}}</a> &nbsp;&nbsp;
@@ -32,6 +33,7 @@
 		    	时间：{{.data.ctime}}&nbsp;&nbsp;
 		    	浏览：{{.data.views}}
 		    </div>
+			</div>
 
 			<div class="content" style="margin-bottom:50px;">{{str2html .data.content}}</div>
 

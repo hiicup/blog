@@ -8,6 +8,7 @@ body{
 }
 blockquote{
 	font-size: 14px;
+	background-color: rgba(238, 238, 238, 0.28);
 }
 .f12{
 	font-size: 12px;
@@ -53,13 +54,23 @@ article .label{
 
 article.detail{
 	padding: 10px;
+	padding-top: 0;
 	background-color: white;
 	border-radius: 3px;
+}
+
+.breadcrumb{
+	margin-bottom: 10px;
+	background: none;
 }
 
 .content img{
 	max-width: 100%;
 	height: auto;
+}
+
+.detail-head{
+	padding-top: 5px;
 }
 
 .label-muted{
