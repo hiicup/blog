@@ -11,7 +11,9 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-8">
-				{{range $k,$v:=.sdata}}
+				
+				<div class="index-article">
+					{{range $k,$v:=.sdata}}
 				<article>
 					<div class="panell">
 					    <h4 class="article-title">
@@ -30,7 +32,11 @@
 				</article>
 				{{end}}
 
-				{{str2html .page}}
+				
+				</div>
+				<div class="page-wrap">
+					{{str2html .page}}
+				</div>
 
 			</div>
 			<div class="col-md-2">

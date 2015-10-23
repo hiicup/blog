@@ -4,6 +4,10 @@ body{
 	font-family: Monaco,'Microsoft YaHei',Arial, sans-serif,sans-serif;
 	/*normal 14px/1.6 */
 	padding:70px 0;
+	background-color: beige;
+}
+blockquote{
+	font-size: 14px;
 }
 .f12{
 	font-size: 12px;
@@ -32,9 +36,25 @@ article .label{
 	padding: 0;
 }
 
+.index-article{
+	margin-left: 5px;
+	background: white;
+	border-radius: 3px;
+}
+
+.page-wrap{
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.page-wrap .pagination{
+	margin: 0;
+}
+
 article.detail{
-	padding-right: 20px;
-	padding-left: 10px;
+	padding: 10px;
+	background-color: white;
+	border-radius: 3px;
 }
 
 .content img{
