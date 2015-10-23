@@ -98,7 +98,7 @@ func (this *ArticleController) Md() {
 		this.Success(lang.MSG_EDIT_SUCCESS, URL_ARTICLE_HOME)
 
 	} else {
-		beego.Trace(html.UnescapeString(art.Content))
+
 		// art.Content = html.UnescapeString(art.Content)
 	}
 

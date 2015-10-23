@@ -21,8 +21,15 @@
     mdCon.on('input',function(){
       var md = $(this).val();
       var html =marked(md);
+      var top = $(this).scrollTop();
       htmlCon.html(html);
       $("#html-con").val(html)
+      htmlCon.scrollTop(top+10);
+    });
+
+    mdCon.on('scroll',function(){
+      var top = $(this).scrollTop();
+      htmlCon.scrollTop(top+10);
     });
 
     mdCon.trigger('input');
@@ -58,10 +65,11 @@
                 <div class="row">
                   
                   <div class="col-md-6">
-                    <textarea class="form-control" name="md" style="height:650px;" id="mdCon">{{.data.Md}}</textarea>
+                    <textarea class="form-control" name="md" style="height:450px;" id="mdCon">{{.data.Md}}
+                    </textarea>
                   </div>
 
-                  <div class="col-md-6" id="htmlCon" style="height:650px; overflow:auto">
+                  <div class="col-md-6" id="htmlCon" style="height:450px; overflow:auto;">
                     {{str2html .data.Html}}
                   </div>
 
