@@ -15,7 +15,7 @@
 				<article>
 					<div class="panell">
 					    <h4 class="article-title">
-					    	<span class="label label-warning">{{$v.day}}/{{$v.month}}</span>
+					    	<span class="label label-success">{{$v.day}}/{{$v.month}}</span>
 					    	<a href="/detail/{{$v.id}}">{{$v.title}}</a>
 					    </h4>
 					    <div class="info text-muted">
