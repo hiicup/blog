@@ -3,7 +3,7 @@
 <head>
 {{template "head.html" .}}
 <script type="text/javascript" src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/static/node_modules/highlight.js/styles/xcode.css">
+<link rel="stylesheet" type="text/css" href="/static/node_modules/highlight.js/styles/monokai_sublime.css">
 
 <script type="text/javascript">
 	hljs.initHighlightingOnLoad();
@@ -27,12 +27,12 @@
 			<div class="detail-head">
 				<h3>{{.data.title}}</h3>
 
-			<div class="info">
-		    	分类：<a href="/category/{{.data.cid}}">{{.data.cname}}</a> &nbsp;&nbsp;
-		    	标签：{{.data.tags}}&nbsp;&nbsp;
-		    	时间：{{.data.ctime}}&nbsp;&nbsp;
-		    	浏览：{{.data.views}}
-		    </div>
+				<div class="info">
+			    	分类：<a href="/category/{{.data.cid}}">{{.data.cname}}</a> &nbsp;&nbsp;
+			    	标签：{{.data.tags}}&nbsp;&nbsp;
+			    	时间：{{.data.ctime}}&nbsp;&nbsp;
+			    	浏览：{{.data.views}}
+			    </div>
 			</div>
 
 			<div class="content" style="margin-bottom:50px;">{{str2html .data.content}}</div>

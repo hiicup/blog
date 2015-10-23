@@ -59,6 +59,13 @@ article.detail{
 	border-radius: 3px;
 }
 
+.hljs{
+	padding-top: 0;
+}
+pre{
+	padding: 0;
+}
+
 .breadcrumb{
 	margin-bottom: 10px;
 	background: none;
