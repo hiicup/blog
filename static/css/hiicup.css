@@ -21,7 +21,7 @@ blockquote{
 	font-size: 12px;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
-	/*border-bottom: 1px dashed #ddd;*/
+	border-bottom: 1px dashed #ddd;
 }
 
 h4.article-title a{
@@ -59,6 +59,21 @@ article.detail{
 	border-radius: 3px;
 }
 
+article.detail p{
+	font-size: 16px;
+}
+
+article.detail pre{
+	border:none;
+}
+
+article.detail pre code{
+	padding: 1em;
+}
+
+article.detail .content{
+}
+
 .hljs{
 	padding-top: 0;
 }
@@ -68,7 +83,7 @@ pre{
 
 .breadcrumb{
 	margin-bottom: 10px;
-	background: none;
+	background: white;
 }
 
 .content img{
