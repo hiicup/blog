@@ -1,7 +1,7 @@
 
 body{
 	/*font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Arial, sans-serif,'Microsoft YaHei',Monaco,sans-serif;*/
-	font-family: Monaco,'Microsoft YaHei',Arial, sans-serif,sans-serif;
+	font-family: Monaco,'Microsoft YaHei',Arial, sans-serif;
 	/*normal 14px/1.6 */
 	padding:70px 0;
 	background-color: beige;
@@ -68,7 +68,9 @@ article.detail pre{
 }
 
 article.detail pre code{
-	padding: 1em;
+	padding: 0.5em 1em;
+	line-height: 200%;
+	font-family: Menlo,Monaco,Consolas,"Courier New",'Microsoft YaHei';
 }
 
 article.detail .content{

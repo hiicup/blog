@@ -3,7 +3,7 @@
 <head>
 {{template "head.html" .}}
 <script type="text/javascript" src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/static/node_modules/highlight.js/styles/docco.css">
+<link rel="stylesheet" type="text/css" href="/static/node_modules/highlight.js/styles/atelier-cave.light.css">
 
 <script type="text/javascript">
 	hljs.initHighlightingOnLoad();
