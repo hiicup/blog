@@ -3,7 +3,7 @@
 <script type="text/javascript" src="/static/node_modules/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/static/node_modules/marked/marked.min.js"></script>
 
-<script type="text/javascript" src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script type="text/javascript" src="/static/js/highlight.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/static/node_modules/highlight.js/styles/xcode.css">
 
 <script type="text/javascript">
